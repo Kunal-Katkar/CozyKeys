@@ -10,12 +10,9 @@ module.exports.createReview = async (req, res) => {
     
     const review = new Review(req.body.review);
     review.author = req.user._id;
-    listing.reviews.push(review);
     
     await review.save();
-    await listing.save();
-  
-    
+    await Listing.findByIdAndUpdate(req.params.id, { $push: { reviews: review._id } });
     
     res.redirect(`/listings/${req.params.id}`);
 };

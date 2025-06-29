@@ -196,6 +196,6 @@ module.exports.searchListings = async (req, res) => {
         ]
     }).populate("owner");
     
-    res.render("listings/index.ejs", { allListings, searchQuery: q });
+    res.render("listings/index.ejs", { allListings, searchQuery: q, getListingCategories });
 };
 

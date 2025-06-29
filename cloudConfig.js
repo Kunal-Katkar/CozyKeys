@@ -22,10 +22,13 @@ const storage = new CloudinaryStorage({
     }
 });
 
-// Add error handler for storage
+// Add error handler for storage without recursive calls
+const originalHandleFile = storage._handleFile;
 storage._handleFile = function(req, file, cb) {
     console.log('Attempting to upload file:', file.originalname);
-    this._handleFile(req, file, (err, info) => {
+    
+    // Call the original _handleFile method
+    originalHandleFile.call(this, req, file, (err, info) => {
         if (err) {
             console.error('Cloudinary upload error:', err);
         } else {
