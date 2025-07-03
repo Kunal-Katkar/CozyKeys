@@ -481,10 +481,12 @@ const sampleListings = [
     },
   ];
 
+const OWNER_ID = "684c50302c24a181b2cc2674";
+
 const initDB = async () => {
     const mongoose = require("mongoose");
     const Listing = require("../models/listing.js");
-    const User = require("../models/user.js");
+    // const User = require("../models/user.js");
 
     try {
         await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
@@ -493,20 +495,7 @@ const initDB = async () => {
         await Listing.deleteMany({});
         console.log("Listings deleted!");
 
-        // Find or create John_cena user
-        let john_cena = await User.findOne({ username: 'John_cena' });
-        if (!john_cena) {
-            john_cena = new User({
-                username: 'John_cena',
-                email: 'john_cena@example.com'
-            });
-            await john_cena.register(john_cena, 'password123');
-            console.log("Created John_cena user!");
-        } else {
-            console.log("Found existing John_cena user!");
-        }
-
-        // Add owner to each listing
+        // Add owner to each listing using the provided OWNER_ID
         const listingsWithOwner = sampleListings.map(listing => {
             return new Listing({
                 title: listing.title,
@@ -519,12 +508,12 @@ const initDB = async () => {
                     type: "Point",
                     coordinates: listing.geometry.coordinates
                 },
-                owner: john_cena._id
+                owner: OWNER_ID
             });
         });
 
         await Listing.insertMany(listingsWithOwner);
-        console.log("Sample listings added with John_cena as owner!");
+        console.log("Sample listings added with provided user as owner!");
     } catch (err) {
         console.error("Error during initialization:", err);
     } finally {

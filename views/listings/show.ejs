@@ -4,7 +4,8 @@
   <div class="col-8 offset-2">
     <h3 class="mb-3"><%= listing.title %></h3>
     <div class="card listing-card">
-      <img src="<%= listing.image ? listing.image : '' %>" class="card-img-top show-img" alt="listing image">
+      <% let imageUrl = (listing.image && listing.image.url) ? listing.image.url : listing.image; %>
+      <img src="<%= imageUrl %>" class="card-img-top show-img" alt="listing image">
       <div class="card-body">
         <p class="card-text">
           <i> Owned by <%= listing.owner ? listing.owner.username : 'Unknown User' %></i>
