@@ -7,14 +7,6 @@ body{
     padding: 0;
 }
 
-/* .container{
-    flex: 1;
-} */
-
-
-
-/* Navbar */
-
 .navbar{
     height: 80px;
     background-color: white;
@@ -100,33 +92,27 @@ body{
     border: none !important;
     margin-bottom: 2rem;
 }
-
 .card-img-top {
     border-radius: 1rem !important;
     width: 100% !important;
     object-fit: cover !important;
 }
-
 .card-body {
     padding: 0.5rem 0 !important;
 }
-
 .card-text {
     font-weight: 400 !important;
 }
-
 .listing-link {
     text-decoration: none !important;
     color: #222222 !important;
 }
-
 /* Card Effects */
 .card-img-overlay {
     opacity: 0;
     background-color: black;
     transition: 0.3s ease;
 }
-
 .card:hover .card-img-overlay {
     opacity: 0.2;
 }
@@ -135,37 +121,30 @@ body{
     background-color: #fa424d !important;
     border: none !important;
 }
-
 /* Edit Page */
 .edit-btn{
     background-color: #fa424d !important;
     border: none !important;
     margin-right: 8px;
 }
-
 /* Show Page */
 .show-img{
     height: 30vh;
 }
-
 .btns{
     display: flex;
 }
-
 /* Map */
-
 #map {
     height: 400px;
     width: 600px;
 }
-
 /* Container improvements */
 .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
-
 /* Form improvements */
 .form-control {
     border-radius: 15px !important;
@@ -174,13 +153,11 @@ body{
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.9);
 }
-
 .form-control:focus {
     border-color: #fa424d !important;
     box-shadow: 0 0 0 0.2rem rgba(250, 66, 77, 0.25) !important;
     background: rgba(255, 255, 255, 1);
 }
-
 /* Search improvements */
 .search-btn {
     background: linear-gradient(135deg, #fa424d 0%, #ff6b6b 100%) !important;
@@ -192,13 +169,11 @@ body{
     box-shadow: 0 4px 15px rgba(250, 66, 77, 0.3);
     transition: all 0.3s ease;
 }
-
 .search-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(250, 66, 77, 0.4);
     background: linear-gradient(135deg, #ff6b6b 0%, #fa424d 100%) !important;
 }
-
 .search-input {
     border-radius: 25px !important;
     padding: 12px 25px !important;
@@ -206,27 +181,21 @@ body{
     background: rgba(255, 255, 255, 0.9);
     transition: all 0.3s ease;
 }
-
 .search-input:focus {
     border-color: #fa424d !important;
     box-shadow: 0 0 0 0.2rem rgba(250, 66, 77, 0.25) !important;
     background: rgba(255, 255, 255, 1);
 }
-
-/* Responsive improvements */
 @media (max-width: 768px) {
     .navbar {
         height: 70px;
     }
-    
     .fa-compass {
         font-size: 2rem;
     }
-    
     .card-body {
         padding: 1rem !important;
     }
-    
     .show-img {
         height: 30vh;
     }

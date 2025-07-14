@@ -17,7 +17,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-        folder: 'wonderway',
+        folder: 'cozykeys',
         allowedFormats: ['jpeg', 'png', 'jpg']
     }
 });
